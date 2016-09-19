@@ -15,5 +15,6 @@ public class ProceduralExample {
 		System.out.println("Hi, my name is "+ names [0] + " and I am " + years[0] + ".");
 		System.out.println("Hi, my name is "+ names [1] + " and I am " + years[1] + ".");
 		System.out.println("Hi, my name is "+ names [2] + " and I am " + years[2] + ".");
+
 	}
 }
