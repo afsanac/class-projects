@@ -17,7 +17,7 @@ public class StringPractice {
 		String word1 = "Aardvark";
 		String word2 = "Zyzzyva;"
 		if (word1.compareTo(word2) < 0){
-			System.out
+			System.out.println(word1 is before word2);
 		}
 		
 	}
