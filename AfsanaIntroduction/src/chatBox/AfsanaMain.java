@@ -28,7 +28,7 @@ public class AfsanaMain {
 		while(inLoop){
 			print("Greetings, " + user + " How are you?");
 			response = getInput();
-			if (response.indexOf("good") > 0){
+			if (findKeyWord(response, "good", 0)){
 				print("I'm so happy you're good");
 			}
 			
@@ -44,6 +44,33 @@ public class AfsanaMain {
 	
 	public static String getInput() {
 		return input.nextLine();
+	}
+	public static boolean findKeyWord(String searchString, String key, int startIndex) {
+		//deletes white space
+		String phrase = searchString.trim();
+		//set all letters to lowercase
+		phrase = phrase.toLowerCase();
+		key = key.toLowerCase();
+		//find position of key
+		int psn = phrase.indexOf(key); // psn = position
+		//keep looking for the word until you find the right context
+		while (psn >= 0){
+			String before = " ";
+			String after = " ";
+			//if the phrase does not end with this word
+			if (psn + key.length() < phrase.length()){
+				after = phrase.substring(psn + key.length(), psn + key.length() + 1).toLowerCase();
+			}
+			// if the phrase does not begin with this word 
+			if (psn > 0){
+				before = phrase.substring(psn-1,psn).toLowerCase();
+			}
+			if (before.compareTo("a") < 0 && after.compareTo("a") < 0){
+				return true;
+			}
+		}
+		
+		return false;
 	}
 
 	public static void promptInput() {
