@@ -17,7 +17,7 @@ public class School implements Topic {
 			if(schoolResponse.indexOf("stop") >= 0{
 				inSchoolLoop = false;
 				AfsanaMain.talkForever();
-			})aq
+			})
 			
 			AfsanaMain.print("That's my favorite part about school");
 			
