@@ -8,13 +8,15 @@ public class AfsanaMain {
 	static String user;
 	static boolean inLoop;
 	static String response;
-	static Topic school;
+	//declare groups's classes
+//	static Topic school;
+//	static Topic like;
+//	static Topic hello;
 
 	public static void main(String[] args) {
 		createTopic();
 		promptName();
 		talkForever();
-		
 	}
 	
 	private static void promptName() {
@@ -30,12 +32,6 @@ public class AfsanaMain {
 			response = getInput();
 			if (findKeyWord(response, "good", 0) >= 0){
 				print("I'm so happy you're good");
-			}
-			
-			else if (findKeyWord(response, "school", 0) >= 0){
-				inLoop = false; //exit this loop
-				school.talk();
-			
 			}else{
 				print("I don't understand you");
 			}
@@ -146,6 +142,8 @@ public class AfsanaMain {
 	}
 	public static void createTopic() {
 		input = new Scanner (System.in);
-		school = new School();
+		//school = new School();
+		
+		//initialize group classes
 	}
 }

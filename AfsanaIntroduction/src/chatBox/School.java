@@ -14,13 +14,27 @@ public class School implements Topic {
 		while (inSchoolLoop){
 			AfsanaMain.print("Tell me about school.");
 			schoolResponse = AfsanaMain.getInput();
-			if(schoolResponse.indexOf("stop") >= 0{
+			if(schoolResponse.indexOf("stop") >= 0){
 				inSchoolLoop = false;
 				AfsanaMain.talkForever();
-			})
+			}
 			
-			AfsanaMain.print("That's my favorite part about school");
+			AfsanaMain.print("That's my favorite part about school too.");
 			
+		}	
+	}
+	
+	public boolean isTriggered(String userInput) {
+		//String[] triggers = {"school","class","teacher"};
+		//you could use a for loop
+		//to iterate through an array
+		if(AfsanaMain.findKeyWord(userInput, "school", 0) >= 0){
+			return true;
+		}
+		if(AfsanaMain.findKeyWord(userInput, "class", 0) >= 0){
+			return
+		}	
+			}
 		}
 	}
 }
