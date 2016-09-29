@@ -19,12 +19,13 @@ public class AfsanaLike implements Topic{
 					AfsanaMain.school.talk();
 				}else{
 				
-				inLikeLoop false;
+				inLikeLoop = false;
 				AfsanaMain.talkForever();
 			}else{
 				AfsanaMain.print("I don't understand you");
 			}
 		}
 	}
-
 }
+}
+	

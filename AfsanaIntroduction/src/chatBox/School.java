@@ -32,9 +32,7 @@ public class School implements Topic {
 			return true;
 		}
 		if(AfsanaMain.findKeyWord(userInput, "class", 0) >= 0){
-			return
+			return true;
 		}	
 			}
-		}
 	}
-}

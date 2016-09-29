@@ -9,9 +9,9 @@ public class AfsanaMain {
 	static boolean inLoop;
 	static String response;
 	//declare groups's classes
-//	static Topic school;
-//	static Topic like;
-//	static Topic hello;
+	static Topic school;
+	static Topic like;
+	static Topic hello;
 
 	public static void main(String[] args) {
 		createTopic();
@@ -142,7 +142,10 @@ public class AfsanaMain {
 	}
 	public static void createTopic() {
 		input = new Scanner (System.in);
-		//school = new School();
+		school = new School();
+		like = new AfsanaLike();
+		hello = new AfsanaHello();
+		
 		
 		//initialize group classes
 	}
