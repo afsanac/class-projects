@@ -1,18 +1,48 @@
 package arrays;
 
+import java.lang.reflect.Array;
+
 public class ArraysMain {
 	
 	
 	public static void main(String[] args){
+		//This is how you time how you quickly a computer processes
+		long startTime = System.currentTimeMillis();
+		String[] someStrings = new String[100];
+		popularArray(someStrings);
+		printArray(someStrings);
 		
+		changeString(someStrings[99]);
+		
+		long endTime = System.currentTimeMillis();
+		System.out.println("Completed method is" + (endTime - startTime) + "millieseconds");
 	}
 	
+	private static void changeString(String s) {
+		s = "This string has been changed";
+		
+	}
+
+	private static void printArray(String[] array) {
+		for (String s : array){
+			System.out.println(s);
+		}
+	}
+
+	private static void popularArray(String[] array) {
+		for(int index = 0; index < array.length; index++) {
+			array[index] = "value" + (index + 1);
+		
+		}
+	}
+
 	public static void arrayIntroMethod(){
 		//construct 2 integers arrays
 		//these two methods do the same thing
 		//primitive type arrays fill with ZEROES 0, 0.0, false
 		int[] zeros1 = {0,0,0};
 		int[] zeros2 = new int[3];
+		
 		//example
 		boolean[] booleans = new boolean[3];
 		//iterate (2 ways)
@@ -23,6 +53,7 @@ public class ArraysMain {
 		for(int index = 0; index< booleans.length; index ++){
 			System.out.println(index+ (" ") + booleans[index]);
 		}
+		
 		//SECOND METHOD: "FOR-EACH"
 		//always goes in order, does not keep track of index
 		//easier to type
@@ -30,15 +61,18 @@ public class ArraysMain {
 			System.out.println(b + "");
 		}
 		
-		//these two constructor are diferent
-		String[] string1 = ( "", "", "" );
-		String[] string2 = new String[3];
+		//these two constructor are different
+		String[] strings1 = { "", "", "" };
+		String[] strings2 = new String[3];
 		
-		for(String s : string1){
-			System.out.println(s);
+		
+		
+		for(int index = 0; index < strings2.length; index ++){
+			strings2[index] = "Value " +(index+1);
 		}
 		
-		for(String s : string2){
+		//this loop prints the strings
+		for(String s : strings2){
 			System.out.println(s);
 		}
 			
@@ -46,4 +80,3 @@ public class ArraysMain {
 		}
 	}
 
-}
