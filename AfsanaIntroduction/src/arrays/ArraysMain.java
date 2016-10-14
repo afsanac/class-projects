@@ -8,16 +8,39 @@ public class ArraysMain {
 	public static void main(String[] args){
 		//This is how you time how you quickly a computer processes
 		long startTime = System.currentTimeMillis();
-		String[] someStrings = new String[100];
-		popularArray(someStrings);
-		printArray(someStrings);
-		
-		changeString(someStrings[99]);
-		
+
 		long endTime = System.currentTimeMillis();
-		System.out.println("Completed method is" + (endTime - startTime) + "millieseconds");
+		System.out.println("Completed method is " + (endTime - startTime) + " millieseconds");
 	}
 	
+	public static void passByValueDemostration(){
+		String[] someStrings = new String[100];
+		populateArray(someStrings);
+		printArray(someStrings);
+		//in this method, we pass the ELEMENT
+		//(a variable) not the array, so
+		//no change will be made
+		changeString(someStrings[99]);		
+		changeArray (someStrings);
+		System.out.println("After \"changeArray"\);
+		
+		int ten = 10;
+		increase(ten);
+	}
+	
+	
+	private static void changeArray(String[] someStrings) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	// this method does nothing since local variables are destroyed when the method is complete
+	private static void increase(int x) {
+		x = x + 1;
+		
+	}
+
 	private static void changeString(String s) {
 		s = "This string has been changed";
 		
@@ -29,9 +52,9 @@ public class ArraysMain {
 		}
 	}
 
-	private static void popularArray(String[] array) {
+	private static void populateArray(String[] array) {
 		for(int index = 0; index < array.length; index++) {
-			array[index] = "value" + (index + 1);
+			array[index] = "value " + (index + 1);
 		
 		}
 	}
