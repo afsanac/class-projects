@@ -16,16 +16,19 @@ public class ArraysMain {
 	public static void passByValueDemostration(){
 		String[] someStrings = new String[100];
 		populateArray(someStrings);
-		printArray(someStrings);
-		//in this method, we pass the ELEMENT
-		//(a variable) not the array, so
-		//no change will be made
-		changeString(someStrings[99]);		
-		changeArray (someStrings);
-		System.out.println("After \"changeArray"\);
 		
 		int ten = 10;
 		increase(ten);
+		System.out.println("Ten, increased is " +ten);
+		
+		//in this method, we pass the ELEMENT
+		//(a variable) not the array, so
+		//no change will be made
+		
+		changeString(someStrings[99]);		
+		changeArray (someStrings);
+		System.out.println("After \"changeArray"\);
+
 	}
 	
 	
