@@ -49,6 +49,7 @@ public class LogInQuiz {
 					//.5 point for printing a changing number
 					//.5 point correct number
 					System.out.print("Incorrect password. You have " +remainingTries+ " tries left.");
+					
 				}
 			}
 		}
