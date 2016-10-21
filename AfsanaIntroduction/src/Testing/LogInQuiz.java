@@ -29,7 +29,7 @@ public class LogInQuiz {
 
 	private static void askPassword() {
 		boolean inLoop = true;
-		int remainingTries = 2;
+		int remainingTries = 3;
 		//1 point, using a Loop
 		while(inLoop){
 			System.out.println("Enter your password.");
