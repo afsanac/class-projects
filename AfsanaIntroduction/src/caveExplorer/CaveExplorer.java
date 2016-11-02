@@ -21,42 +21,25 @@ public class CaveExplorer {
 				caves[i][j] = new CaveRoom("This cave has coordinates "+i+", "+j);
 			}
 		}
-		currentRoom = caves[3][3];
+		currentRoom = caves[0][1];
 		currentRoom.enter();
-		caves[3][3].setConnection(CaveRoom.EAST, caves[3][4], new Door());
-		caves[3][3].setDescription("This is the room you started in.");
-		
-		caves[3][4].setConnection(CaveRoom.NORTH, caves[2][4], new Door());
-		caves[2][4].setConnection(CaveRoom.WEST, caves[2][3], new Door());
-		caves[2][3].setConnection(CaveRoom.SOUTH, caves[3][3], new Door());
-		inventory = new Inventory(caves);
+		caves[0][1].setConnection(CaveRoom.EAST, caves[0][2], new Door());
+		caves[0][2].setConnection(CaveRoom.SOUTH, caves[1][2], new Door());
+		caves[1][2].setConnection(CaveRoom.SOUTH, caves[2][2], new Door());
+		inventory = new Inventory();
 		startExploring();
+		
 	}
-	
+
+
 	private void startExploring() {
 		while(true){
-			print(inventory.getDescription());
+			System.out.println(inventory.getDescription());
 			System.out.println(currentRoom.getDescription());
 			System.out.println("What would you like to do?");
-			String input = waitForInput();
-			act(input);
+			String input = in.nextLine();
+			currentRoom.interpretInput(input);
 		}
-	}
-	
-	public static void print(String s){
-		System.out.println(s);
-	}
-
-
-	private void act(String input) {
 		
-		currentRoom = currentRoom.interpretAction(input);
 	}
-
-
-	public static String waitForInput(){
-		return in.nextLine();
-	}
-	
 }
-

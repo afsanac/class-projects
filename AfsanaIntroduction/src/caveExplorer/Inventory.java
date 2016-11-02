@@ -3,9 +3,8 @@ package caveExplorer;
 public class Inventory {
 	private boolean hasMap;
 	private String map;
-	
 
-	public Inventory(CaveRoom[][] caves) {
+	public Inventory() {
 		hasMap = true;
 		updateMap();
 	}
@@ -52,10 +51,14 @@ public class Inventory {
 	public String getDescription(){
 		if(hasMap){
 			updateMap();
-			return "You have a map:\n" +map;
+			return map;
 		}else{
-			return "You have no inventory.";
+			return "There is nothing in your inventory.";
 		}
+	}
+	
+	public void setMap(boolean b){
+		hasMap = b;
 	}
 
 }
