@@ -36,4 +36,13 @@ public class Door {
 	public void setDetails(String details) {
 		this.details = details;
 	}
+	public String getDescription() {
+		return description;
+	}
+	public String getDetails() {
+		return details;
+	}
+	public void setLocked(boolean locked) {
+		this.locked = locked;
+	}
 }
