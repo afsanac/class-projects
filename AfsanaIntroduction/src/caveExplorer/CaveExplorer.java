@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class CaveExplorer {
 	public static CaveRoom[][] caves;
-	private static Scanner in;
+	static Scanner in;
 	public static CaveRoom currentRoom;
 	private Inventory inventory;
 	
@@ -22,6 +22,7 @@ public class CaveExplorer {
 				caves[i][j] = new CaveRoom("This cave has coordinates "+i+", "+j);
 			}
 		}
+		caves[0][2] = new EventRoom("This os the room the guy with the tail met you.", new GamesStartEvent());
 		currentRoom = caves[0][1];
 		currentRoom.enter();
 		caves[0][1].setConnection(CaveRoom.EAST, caves[0][2], new Door());
@@ -42,6 +43,10 @@ public class CaveExplorer {
 			currentRoom.interpretInput(input);
 		}
 		
+	}
+	
+	public static void print(){
+		System.out.println();
 	}
 	
 }

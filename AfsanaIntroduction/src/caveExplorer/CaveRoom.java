@@ -1,6 +1,7 @@
 package caveExplorer;
 
 public class CaveRoom {
+	
 	private String description;
 	private String directions;
 	private String contents;
@@ -61,16 +62,6 @@ public class CaveRoom {
 	public void setDefaultContents(String symbol){
 		defaultContents = symbol;
 	}
-	
-	private static String toDirection(int dir) {
-		switch(dir){
-		case NORTH: return "the North";
-		case EAST: return "the East";
-		case SOUTH: return "the South";
-		case WEST: return "the West";
-		}
-		return "somewhere";
-	}
 
 	public void addRoom(int direction, CaveRoom anotherRoom, Door door){
 		borderingRooms[direction] = anotherRoom;
@@ -122,8 +113,8 @@ public class CaveRoom {
 	}
 
 	private CaveRoom moveToRoom(int dir){
-		if(borderingRooms[dir] != null && !doors[dir].isLocked()){
-			leave();
+		if(borderingRooms[dir] != null && !doors[dir].isOpen()){
+			CaveRoom.currentRoom.leave();
 			borderingRooms[dir].enter();
 			return borderingRooms[dir];
 		}else{
