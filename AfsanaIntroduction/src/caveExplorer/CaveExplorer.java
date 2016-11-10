@@ -11,6 +11,7 @@ public class CaveExplorer {
 	public static void main(String[] args){
 		in = new Scanner(System.in);
 		new CaveExplorer();
+		
 	}
 	
 	

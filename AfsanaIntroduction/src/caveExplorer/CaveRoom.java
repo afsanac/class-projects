@@ -17,7 +17,7 @@ public class CaveRoom {
 
 	public CaveRoom(String description){
 		this.description = description;
-		setDefaultContents("   ");
+		setDefaultContents(" ");
 		contents = defaultContents;
 		
 		borderingRooms = new CaveRoom[4];
@@ -104,11 +104,10 @@ public class CaveRoom {
 		return description+directions;
 	}
 
-	public CaveRoom interpretAction(String command) {
-		boolean valid = isValidCommand(command);
-		while(!valid){
+	public CaveRoom interpretInput(String input) {
+		while(isValid(input)){
 			System.out.println("In this room, you can only enter 'w','a','s', or 'd'.");
-			command = CaveExplorer.waitForInput();
+			input = CaveExplorer.in.nextLine;
 		}
 		if(command.equals("a")) return moveToRoom(WEST);
 		else if(command.equals("d")) return moveToRoom(EAST);
@@ -117,6 +116,11 @@ public class CaveRoom {
 		return this;
 	}
 	
+	private boolean isValid(String input) {
+		String[] keys = {"w", "a", "s", "d"};
+		return false;
+	}
+
 	private CaveRoom moveToRoom(int dir){
 		if(borderingRooms[dir] != null && !doors[dir].isLocked()){
 			leave();
@@ -140,11 +144,6 @@ public class CaveRoom {
 
 	public void setDescription(String string) {
 		description = string;
-	}
-
-	public void interpretInput(String input) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
