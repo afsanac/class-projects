@@ -22,6 +22,7 @@ public class pokemon {
 	public
 	public void lapsed(){
 		if(poisoned)hp-=15;
+		
 	}
 	
 }
