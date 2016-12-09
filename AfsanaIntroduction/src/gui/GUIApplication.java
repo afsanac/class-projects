@@ -12,6 +12,7 @@ public class GUIApplication extends JFrame {
 	//demo purpose only
 	public static void main(String[] args) {
 		new GUIApplication(800,600);
+	
 
 	}
 	

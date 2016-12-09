@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 
@@ -13,10 +14,14 @@ public class Screen {
 		initImage(width, height);
 	}
 
-	private void initImage(int width, int height) {
+	public void initImage(int width, int height) {
 		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 		update();
 		
+	}
+	
+	public BufferedImage getImage() {
+		return image;
 	}
 
 	private void update() {
@@ -28,7 +33,9 @@ public class Screen {
 		g.fillRect(0, 0, image.getWidth(), image.getHeight());
 		g.setColor(Color.black);
 		g.drawString("hello world", 40, 100);
-		g.drawOval(70, 60, 100, 50);
+		g.drawOval(20, 70, 100, 50);
 		
-	
+	}
 }
+
+	
