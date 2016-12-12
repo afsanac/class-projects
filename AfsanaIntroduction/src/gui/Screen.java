@@ -23,6 +23,14 @@ public class Screen {
 	public BufferedImage getImage() {
 		return image;
 	}
+	
+	public int getWidth(){
+		return image.getWidth();
+	}
+	
+	public int getHeight(){
+		return image.getHeight();
+	}
 
 	private void update() {
 		Graphics2D g = image.createGraphics();
@@ -32,8 +40,8 @@ public class Screen {
 		g.setColor(Color.pink);
 		g.fillRect(0, 0, image.getWidth(), image.getHeight());
 		g.setColor(Color.black);
-		g.drawString("hello world", 40, 100);
-		g.drawOval(20, 70, 100, 50);
+//		g.drawString("hello world", 40, 100);
+//		g.drawOval(20, 70, 100, 50);
 		
 	}
 }
