@@ -58,6 +58,14 @@ public abstract class Screen {
 			g.drawImage(v.getImage(), v.getX(), v.getY(), null);
 		}
 	}
+	
+	public MouseMotionListener getMouseMotionListner(){
+		return null;
+	}
+	
+	public MouseListener getMouseListner(){
+		return null;
+	}
 }
 
 	
