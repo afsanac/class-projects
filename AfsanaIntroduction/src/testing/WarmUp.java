@@ -14,13 +14,7 @@ public class WarmUp {
 		
 	}
 	
-	public static void switchRow(boolean[] row, int x){
-//		for (int i = -1; i<2; i++){
-//			if(x + 1 >= 0 && x + 1 < row.length){
-//				row[x+i] = !row[x+1]; 
-//			}
-//		}
-		
+	public static void switchRow(boolean[] row, int x){		
 		if( x >= 0 && x < row.length){
 			for (int i = -1; i<2; i++){
 				if(x + 1 >= 0 && x + 1 < row.length){
