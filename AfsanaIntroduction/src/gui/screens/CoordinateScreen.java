@@ -10,12 +10,16 @@ import gui.components.TextLabel;
 import gui.components.Visible;
 import gui.components.Action;
 import gui.components.Button;
+import gui.components.Graphic;
+import gui.components.TextArea;
 
 public class CoordinateScreen extends Screen  implements MouseMotionListener{
 
 	//FIELD
 	private Button button;
 	private TextLabel text;
+	private TextArea area;
+	private Graphic sprintrap;
 	
 	public CoordinateScreen(int width, int height) {
 		super(width, height);
@@ -31,9 +35,10 @@ public class CoordinateScreen extends Screen  implements MouseMotionListener{
 			}
 		});
 		viewObjects.add(button);
-		text = 
-				new TextLabel(20, 200, 500, 40, "Some text");
+		text = new TextLabel(20, 200, 500, 40, "Some text");
 		viewObjects.add(text);
+		
+		browser = 
 	}
 
 	public void mouseDragged(MouseEvent e) {
