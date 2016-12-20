@@ -20,6 +20,14 @@ public class Graphic implements Visible {
 		loadedImages = false;
 		loadedImages(imageLocation,0,0);
 	}
+	
+	//custom size graphics constuctor
+	public Graphic(int x, int y, int w, int h, String imageLocation) {
+		this.x = x;
+		this.y = y;
+		loadedImages = false;
+		loadedImages(imageLocation,w,h);
+	}
 
 
 	private void loadedImages(String imageLocation, int w, int h) {
