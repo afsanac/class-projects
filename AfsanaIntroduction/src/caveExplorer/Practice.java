@@ -119,8 +119,9 @@ public class Practice {
 		}
 		//left and right col is "|"
 		
-		for(int row = 1; row < pic.length; col++){
-			pic[0][col]
+		for(int row = 1; row < pic.length; row++){
+			pic[0][row]="_";
+			pic[pic.length-1][row] = "_";
 		}
 		printPic(pic);
 	}

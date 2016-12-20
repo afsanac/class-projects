@@ -30,7 +30,7 @@ public class AfsanaMain {
 		while(inLoop){
 			print("Greetings, " + user + " How are you?");
 			response = getInput();
-			if (findKeyWord(response, "good", 0) >= 0){
+			if (findKeyword(response, "good", 0) >= 0){
 				print("I'm so happy you're good");
 			}else{
 				print("I don't understand you");
@@ -41,37 +41,51 @@ public class AfsanaMain {
 	public static String getInput() {
 		return input.nextLine();
 	}
-	public static int findKeyWord(String searchString, String key, int startIndex) {
-		//deletes white space
+	public static int findKeyword(String searchString, String key, int startIndex) {
+		//delete white space
 		String phrase = searchString.trim();
 		//set all letters to lowercase
 		phrase = phrase.toLowerCase();
 		key = key.toLowerCase();
-		
+
+//		System.out.println("The phrase is "+phrase);
+//		System.out.println("The key is "+key);
+
 		//find position of key
-		int psn = phrase.indexOf(key); // psn = position
-		
-		//keep looking for the word until you find the right context
-		while (psn >= 0){
+		int psn = phrase.indexOf(key);
+//		System.out.println("The position found is "+psn);
+		//keep looking for the word 
+		//until you find the right context
+		while(psn >= 0){
 			String before = " ";
 			String after = " ";
 			//if the phrase does not end with this word
-			if (psn + key.length() < phrase.length()){
-				after = phrase.substring(psn + key.length(), psn + key.length() + 1).toLowerCase();
+			if(psn + key.length() < phrase.length()){
+				after = phrase.substring(psn + key.length(),
+						psn + key.length()+1);
+//				System.out.println("The character after "
+//						+ key +" is "+after);
 			}
-			// if the phrase does not begin with this word 
-			if (psn > 0){
+			//if the phrase does not begin with this word
+			if(psn >0){
 				before = phrase.substring(psn-1,psn).toLowerCase();
+//				System.out.println("The character before "
+//						+ key +" is "+before);
 			}
-			if (before.compareTo("a") < 0 && after.compareTo("a") < 0){
-				if(noNegations(phrase,psn)){
-				return psn;
+			if(before.compareTo("a") < 0 &&
+					after.compareTo("a") < 0){
+//				System.out.println(key+" was found at "+psn);
+				if(noNegations(phrase, psn)){
+					return psn;					
 				}
 			}
-			//in case the keyword was not found yet, check the rest of the phrase
+			//in case the keyword was not found yet,
+			//check the rest of the string
 			psn = phrase.indexOf(key,psn+1);
+//			System.out.println(key+" was not found. "
+//					+ "Checking "+psn);
 		}
-		
+
 		return -1;
 	}
 	

@@ -6,7 +6,7 @@ public class CaveExplorer {
 	public static CaveRoom[][] caves;
 	static Scanner in;
 	public static CaveRoom currentRoom;
-	private Inventory inventory;
+	static Inventory inventory;
 	
 	public static void main(String[] args){
 		in = new Scanner(System.in);
@@ -44,9 +44,10 @@ public class CaveExplorer {
 		}
 		
 	}
-	
-	public static void print(){
-		System.out.println();
+
+	public static void print(String string) {
+		System.out.println(string);
+		
 	}
 	
 }

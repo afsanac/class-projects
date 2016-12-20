@@ -19,7 +19,7 @@ public class CoordinateScreen extends Screen  implements MouseMotionListener{
 	private Button button;
 	private TextLabel text;
 	private TextArea area;
-	private Graphic sprintrap;
+	private Graphic bowser;
 	
 	public CoordinateScreen(int width, int height) {
 		super(width, height);
@@ -37,8 +37,12 @@ public class CoordinateScreen extends Screen  implements MouseMotionListener{
 		viewObjects.add(button);
 		text = new TextLabel(20, 200, 500, 40, "Some text");
 		viewObjects.add(text);
+		area = new TextArea(20, 200, 500, 100, "This is really long text. It prints over multiple lines, as you can see. "
+						+ "We worked on this in class. It is called TextArea.");
+		viewObjects.add(area);
 		
-		browser = 
+		bowser = new Graphic(30,30,.5, "resources/ sampleImages/bowser.png"); 
+		viewObjects.add(bowser);
 	}
 
 	public void mouseDragged(MouseEvent e) {

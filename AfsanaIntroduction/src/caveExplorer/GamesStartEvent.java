@@ -1,5 +1,7 @@
 package caveExplorer;
 
+import caveExplorer.CaveExplorer;
+
 public class GamesStartEvent implements Event {
 
 	public static final String[] SEQ_1 = {
@@ -12,20 +14,26 @@ public class GamesStartEvent implements Event {
 		"btw heres a map"
 	};
 	
+	public GamesStartEvent() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
 	public void play() {
 		readSequence(SEQ_1);
-		CaveExplorer.print("Will ypu help us?");
+		CaveExplorer.print("Will you help us?");
 		while(CaveExplorer.in.nextLine().indexOf("yes") < 0){
 			CaveExplorer.print("Please say yes. I beg you!");
 		}
 		readSequence(SEQ_2);
 		CaveExplorer.inventory.setMap(true);
 	}
-	
-	public static void readSequence(String[] seq){
+
+	public static void readSequence(String[] seq) {
 		for(String s : seq){
 			CaveExplorer.print(s);
-			CaveExplorer.print("--- Press enter ---");
+			CaveExplorer.print(" - - - Press enter - - -");
 			CaveExplorer.in.nextLine();
 		}
 	}
