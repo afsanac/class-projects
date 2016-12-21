@@ -3,12 +3,15 @@ package gui.sampleGames;
 import java.util.ArrayList;
 
 import gui.Screen;
+import gui.components.TextArea;
 import gui.components.Visible;
 
 public class MyScreen extends Screen{
+	
+	private TextArea area;
 
-	public MyScreen() {
-		// TODO Auto-generated constructor stub
+	public MyScreen(int width, int height) {
+		super(width,height);
 	}
 
 	@Override
@@ -16,5 +19,7 @@ public class MyScreen extends Screen{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
 
 }

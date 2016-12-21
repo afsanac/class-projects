@@ -9,6 +9,7 @@ public class MouseFollower extends GUIApplication {
 	//FIELDS
 	public static MouseFollower game;//only ONE exists
 	public static CoordinateScreen cs;
+	public static MyScreen myScreen;
 	
 	
 	public MouseFollower(int width, int height) {
