@@ -13,6 +13,7 @@ import gui.components.Action;
 import gui.components.Button;
 import gui.components.Graphic;
 import gui.components.TextArea;
+import gui.sampleGames.MouseFollower;
 
 public class CoordinateScreen extends Screen  implements MouseMotionListener, MouseListener{
 
@@ -27,9 +28,11 @@ public class CoordinateScreen extends Screen  implements MouseMotionListener, Mo
 	}
 
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		button = new Button(20,100,80,40, "The Button with a long name",
-				new Color(100,100,250),
-				new Action() {
+		new Button(40,50,100,30,"Button",new Color(0,76,153), new Action(){
+			public void act(){
+				MouseFollower.game.setScreen(MouseFollower.myScreen);
+			}
+			});
 			
 			public void act() {
 				
