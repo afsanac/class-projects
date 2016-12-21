@@ -8,7 +8,7 @@ public class MouseFollower extends GUIApplication {
 	
 	//FIELDS
 	public static MouseFollower game;//only ONE exists
-	private CoordinateScreen cs;
+	public static CoordinateScreen cs;
 	
 	
 	public MouseFollower(int width, int height) {
@@ -16,7 +16,6 @@ public class MouseFollower extends GUIApplication {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
 	public void initScreen() {
 		cs = new CoordinateScreen(getWidth(), getHeight());
 		setScreen(cs);
