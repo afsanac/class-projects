@@ -8,46 +8,48 @@ package gui.components;
 
 	public class TextArea extends TextLabel {
 
-		private String text;
-		private String font;
-		private int size;
 		
 		public TextArea(int x, int y, int w, int h, String text) {
 			super(x, y, w, h, text);
 		}
 
-		public void update(Graphics2D g) {
-			g = clear(); //delete previous text
-			g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-			//renderinghints makes it look nice
-			g.setFont(new Font(font,Font.PLAIN,size));
+		public void update(Graphics2D g){
+			g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+			g.setFont(new Font(getFont(), Font.PLAIN, getSize()));
 			FontMetrics fm = g.getFontMetrics();
 			g.setColor(Color.black);
-			String[] words = getText().split(" ");//splits word at every space
-			//w = 80
-			//h = 40
-			
-			if( words.length >0){
-				int i = 0;
-				final int SPACING = 2;
-				int y = 0 + fm.getHeight()+SPACING;
-				String line = words[1] + "";
-				i++;
-				while(i < words.length){//make more lines
-					//controls a single line of text
-					while (i < words.length && fm.stringWidth(line) + fm.stringWidth(words[i]) < getWidth()){
-						line += words[i]+"";
-						i++;
-					}
-					if(y < getHeight()){
-						g.drawString(line, 2, y);
-						y += fm.getDescent() + fm.getHeight() + SPACING;
-						line = "";
-					}else{
-						break;//print no more text
+			if(getText() != null){
+				//split text into array of words
+				String[] words = getText().split(" ");
+				if(words.length >0){
+					//index of word
+					int i = 0;
+					final int SPACING = 2;
+					//y value represents y-coordinate of each line
+					int y = 0 + fm.getHeight()+SPACING;
+					String line = words[i] + " ";
+					i++;
+					//loop as long as there are words left
+					while(i < words.length){
+						//add to current line until horizontal space is outside of bounds
+						while(i < words.length && fm.stringWidth(line) + fm.stringWidth(words[i]) < getWidth()){
+							line += words[i]+" ";
+							i++;
+						}
+						//keep adding lines while there is vertical space
+						if(y < getHeight()){
+							g.drawString(line, 2, y);
+							y += fm.getDescent() + fm.getHeight()+SPACING;
+							//rest line
+							line = "";
+						}else{
+							//no more vertical space
+							break;//print no more text
+						}
 					}
 				}
-			}	
+
+			}
 		}
 	}
 

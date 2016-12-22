@@ -8,6 +8,7 @@ import gui.components.Visible;
 
 public class MyScreen extends Screen{
 	
+	
 	private TextArea area;
 
 	public MyScreen(int width, int height) {
@@ -16,8 +17,7 @@ public class MyScreen extends Screen{
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		// TODO Auto-generated method stub
-		
+
 	}
 	
 	

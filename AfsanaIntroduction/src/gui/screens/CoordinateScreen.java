@@ -28,25 +28,26 @@ public class CoordinateScreen extends Screen  implements MouseMotionListener, Mo
 	}
 
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		new Button(40,50,100,30,"Button",new Color(0,76,153), new Action(){
+
+		text = new TextLabel(20, 200, 500, 40, "Still hungry");
+		
+		viewObjects.add(text);
+		area = new TextArea(20, 250, 500, 100, "hello there, I'm hungry");
+		viewObjects.add(area);
+		
+		bowser = new Graphic(30,30,.5, "resources/sampleImages/cat.jpg"); 
+		viewObjects.add(bowser);
+		
+		
+		button = new Button(40,50,100,30,"Button",new Color(0,76,153), new Action(){
 			public void act(){
 				MouseFollower.game.setScreen(MouseFollower.myScreen);
 			}
-			});
-			
-			public void act() {
-				
-			}
 		});
-		viewObjects.add(button);
-		text = new TextLabel(20, 200, 500, 40, "Some text");
-		viewObjects.add(text);
-		area = new TextArea(20, 200, 500, 100, "This is really long text. It prints over multiple lines, as you can see. "
-						+ "We worked on this in class. It is called TextArea.");
-		viewObjects.add(area);
 		
-		bowser = new Graphic(30,30,.5, "resources/ sampleImages/bowser.png"); 
-		viewObjects.add(bowser);
+		
+		viewObjects.add(button);
+		
 	}
 
 	public void mouseDragged(MouseEvent e) {
@@ -62,10 +63,15 @@ public class CoordinateScreen extends Screen  implements MouseMotionListener, Mo
 	public MouseMotionListener getMouseMotionListener(){ 
 		return this;
 	}
+	
+	public MouseListener getMouseListener(){
+		return this;
+	}
 
 	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
+	public void mouseClicked(MouseEvent m) {
+		if(button.isHovered(m.getX(), m.getY()));
+		button.act();
 		
 	}
 

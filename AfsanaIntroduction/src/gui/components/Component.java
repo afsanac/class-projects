@@ -22,8 +22,7 @@ public abstract class Component implements Visible {
 	}
 
 	public BufferedImage getImage() {
-		// TODO Auto-generated method stub
-		return null;
+		return image;
 	}
 
 	public int getX() {
