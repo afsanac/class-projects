@@ -19,6 +19,7 @@ public class WhackAMoleGame extends GUIApplication {
 	public static void main(String[] args) {
 		WhackAMoleGame wamg = new WhackAMoleGame(800, 500);
 		Thread game = new Thread(wamg);
+		game.start();
 		
 
 	}

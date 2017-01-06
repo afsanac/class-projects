@@ -20,6 +20,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable {
 	public WhackAMoleScreen(int width, int height) {
 		super(width, height);
 		timeLeft = 30.0;
+		//when making simon, creating a Thread like this is necessary since simon's screen change
 		Thread play = new Thread(this);
 		play.start();
 	}
@@ -30,6 +31,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable {
 		player = getAPlayer();
 		label = new TextLabel(350, 220, 100, 40, "sample Text");
 		timeLabel = new TextLabel(360, 40, 80, 40, "30.0");		viewObjects.add(player);
+		viewObjects.add(player);
 		viewObjects.add(timeLabel);
 		viewObjects.add(label);
 
@@ -47,11 +49,11 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable {
 	
 	
 	public PlayerInterface getAPlayer(){
-		return ;
+		return new Player();
 	}
 	
 	public MoleInterface getAMole(){
-		return new Mole(Math.random()* getWidth()), (int)(Math.random()* getHeight()));
+		return new Mole((int) (Math.random()* getWidth()), (int)(Math.random()* getHeight()));
 	}
 	
 	public void run(){
@@ -59,7 +61,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable {
 		changeText("Set...");
 		changeText("Go!...");
 		label.setText("");
-		//since  this is a timed game, we will use a while lopp. This is not necessary for games that aren't timed
+		//since  this is a timed game, we will use a while loop. This is not necessary for games that aren't timed (like simon)
 		
 		while(timeLeft > 0){
 			updateTimer();
@@ -68,7 +70,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable {
 		}
 		
 	}
-
+//NOT USE IN SIMON
 	private void appearNewMole() {
 		double chance = .1*(60 - timeLeft)/60;	
 		if(Math.random() < chance){
@@ -113,7 +115,9 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable {
 		timeLabel.setText("" + (int)(timeLeft)*10/10.0);
 		
 	}
-
+	
+	
+//USE THIS METHOD IN SIMON TOO (for what simon says)
 	private void changeText(String string) {
 		label.setText(string);
 		try{
@@ -121,7 +125,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable {
 		}catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 	
 
