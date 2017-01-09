@@ -11,8 +11,15 @@ public class SimonGameAfsana extends GUIApplication {
 
 	@Override
 	public void initScreen() {
-		// TODO Auto-generated method stub
+		SimonScreenAfsana ssa = new SimonScreenAfsana(getWidth(), getHeight());
+		setScreen(ssa);
 
+	}
+	
+	public static void main(String[] args){
+		SimonGameAfsana sga = new SimonGameAfsana(800, 500);
+		Thread game = new Thread(sga);
+		game.start();
 	}
 
 }
