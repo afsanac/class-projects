@@ -71,6 +71,7 @@ public class SimonScreenAfsana extends ClickableScreen implements Runnable {
 		colorArray[0] = Color.yellow;
 		colorArray[0] = Color.green;
 		
+		
 	}
 
 	@Override
