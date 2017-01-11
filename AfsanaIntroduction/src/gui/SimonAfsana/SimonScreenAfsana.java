@@ -6,7 +6,7 @@ import java.util.List;
 
 import gui.components.TextLabel;
 import gui.components.Visible;
-import gui.sampleGames.ClickableScreen;
+import gui.screens.ClickableScreen;
 
 public class SimonScreenAfsana extends ClickableScreen implements Runnable {
 	
