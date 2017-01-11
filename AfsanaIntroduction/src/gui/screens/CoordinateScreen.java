@@ -12,6 +12,7 @@ import gui.components.Visible;
 import gui.components.Action;
 import gui.components.Button;
 import gui.components.Graphic;
+import gui.components.MovingComponents;
 import gui.components.TextArea;
 import gui.sampleGames.MouseFollower;
 
@@ -37,6 +38,13 @@ public class CoordinateScreen extends Screen  implements MouseMotionListener, Mo
 		
 		bowser = new Graphic(30,30,.5, "resources/sampleImages/cat.jpg"); 
 		viewObjects.add(bowser);
+		
+		MovingComponents c = new MovingComponents(20, 20, 100, 100);
+		viewObjects.add(c);
+		c.setVy(2);
+		c.setVy(1);
+		c.play();
+		
 		
 		
 		button = new Button(40,50,100,30,"Button",new Color(0,76,153), new Action(){
@@ -72,7 +80,6 @@ public class CoordinateScreen extends Screen  implements MouseMotionListener, Mo
 	public void mouseClicked(MouseEvent m) {
 		if(button.isHovered(m.getX(), m.getY()));
 		button.act();
-		
 	}
 
 	@Override
