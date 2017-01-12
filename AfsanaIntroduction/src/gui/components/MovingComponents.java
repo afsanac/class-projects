@@ -62,7 +62,7 @@ public class MovingComponents extends Component implements Runnable {
 	private void checkBehavior() {
 		if(getY()>360){
 			setY(300);
-			setVy(-vy);
+			//setVy(-vy);
 		}
 	}
 
